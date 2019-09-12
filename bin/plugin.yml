@@ -1,0 +1,16 @@
+name: WackySkySurvival
+main: io.github.flailofthelord.wss.WSS
+version: 1.0.0
+author: FlailoftheLord
+website: https://www.github.com/flailofthelord
+
+commands:
+
+  wss:
+    permission: wss.use
+    description: reload stuff
+    
+permissions:
+  wss.use:
+    default: true
+    description: for King and Country!

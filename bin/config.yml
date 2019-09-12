@@ -1,0 +1,11 @@
+# - - - - - - - - - - - - - - - - #
+#  You put stuff here... yes      #
+#  A wise man once told me, "no"  #
+# - - - - - - - - - - - - - - - - #
+item-give-interval: 30
+disabled-players:
+- steve
+- flail
+- whackintosh
+admins:
+- FlailoftheLord
