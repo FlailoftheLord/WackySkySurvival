@@ -28,6 +28,8 @@ public class WSS extends JavaPlugin {
 		getCommand("wss").setExecutor(this);
 		getCommand("wss").setTabCompleter(this);
 
+		getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+
 		setPlayers();
 	}
 
