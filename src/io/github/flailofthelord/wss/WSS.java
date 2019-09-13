@@ -102,10 +102,18 @@ public class WSS extends JavaPlugin {
 				break;
 			case "afk":
 				if (sender instanceof Player) {
+					Player player = (Player) sender;
 
-					wssPlayers.remove(((Player) sender).getUniqueId());
-					sender.sendMessage(chat("&3&lYou are now afk and will not recieve items!"));
-					sender.sendMessage(chat("&7leave the server and join back to start getting items again!"));
+					if (wssPlayers.contains(player.getUniqueId())) {
+						wssPlayers.remove(player.getUniqueId());
+
+						sender.sendMessage(chat("&3&lYou are now afk and will not recieve items!"));
+						sender.sendMessage(chat("&7Type &l/wss afk&r &7to start getting items again!"));
+						break;
+					}
+
+					wssPlayers.add(player.getUniqueId());
+					sender.sendMessage(chat("&a&lYou will start recieving items again! &8(&7/wss afk&8)"));
 					break;
 				}
 
