@@ -100,6 +100,18 @@ public class WSS extends JavaPlugin {
 				sender.sendMessage(chat("&a&lRELOADED SkySurvival settings!"));
 				sender.sendMessage(chat("&c&lSkySurvival ItemGiver has been stopped for the reload. &8(&7/wss start&8)"));
 				break;
+			case "afk":
+				if (sender instanceof Player) {
+
+					wssPlayers.remove(((Player) sender).getUniqueId());
+					sender.sendMessage(chat("&3&lYou are now afk and will not recieve items!"));
+					sender.sendMessage(chat("&7leave the server and join back to start getting items again!"));
+					break;
+				}
+
+				sender.sendMessage(chat("&cYou're the console, you never go afk!"));
+				break;
+
 			}
 
 		}
@@ -116,6 +128,7 @@ public class WSS extends JavaPlugin {
 			list.add("reload");
 			list.add("stop");
 			list.add("start");
+			list.add("afk");
 		}
 
 		for (String s : list.toArray(new String[] {})) {

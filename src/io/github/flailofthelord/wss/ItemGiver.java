@@ -17,10 +17,17 @@ public class ItemGiver implements Runnable {
 		Material[] materials = Material.values();
 		Random random = new Random();
 
+		if (WSS.wssPlayers.isEmpty()) {
+			return;
+		}
+
 		for (UUID uuid : WSS.wssPlayers) {
 			int rnd = random.nextInt(materials.length);
 
 			Player player = Bukkit.getPlayer(uuid);
+			if (player == null) {
+				continue;
+			}
 			PlayerInventory inv = player.getInventory();
 
 			ItemStack item = new ItemStack(materials[rnd]);
